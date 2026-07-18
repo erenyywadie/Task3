@@ -1,0 +1,86 @@
+// Function that accepts a name and a callback
+function greet(name, callback) {
+    console.log(`Hello, ${name}!`);
+
+    // Execute the callback function
+    callback();
+}
+
+// Callback function
+function afterGreeting() {
+    console.log("Welcome to JavaScript!");
+}
+
+// Call the function
+greet("Ereny", afterGreeting);
+----------
+// Calculator function
+function calculate(num1, num2, operation) {
+
+    // Execute the callback operation
+    let result = operation(num1, num2);
+
+    console.log("Result:", result);
+}
+
+// Callback functions
+function add(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+// Test the calculator
+calculate(10, 5, add);
+calculate(10, 5, subtract);
+calculate(10, 5, multiply);
+---------
+// Function that simulates loading data
+function loadData(callback) {
+
+    console.log("Loading data...");
+
+    // Wait 3 seconds
+    setTimeout(() => {
+        console.log("Data loaded successfully!");
+
+        // Execute callback after loading
+        callback();
+    }, 3000);
+}
+
+// Callback function
+function finished() {
+    console.log("Ready to use the data.");
+}
+
+// Run the program
+loadData(finished);
+------------
+// Login function
+function login(username, callback) {
+
+    console.log(`Logging in as ${username}...`);
+
+    // Simulate login delay
+    setTimeout(() => {
+        console.log("Login successful!");
+
+        // Execute the next step
+        callback();
+    }, 2000);
+}
+
+// Callback function
+function nextStep() {
+    console.log("Redirecting to the Dashboard...");
+}
+
+// Run the authentication flow
+login("Ereny", nextStep);
